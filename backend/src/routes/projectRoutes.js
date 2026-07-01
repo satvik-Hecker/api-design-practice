@@ -1,6 +1,6 @@
 import express from "express";
 
-import { createProject, getProjects, getProjectById, updateProject, deleteProject } from "../controllers/projectController.js";
+import { createProject, getProjects, updateProject, deleteProject } from "../controllers/projectController.js";
 
 const router = express.Router();
 

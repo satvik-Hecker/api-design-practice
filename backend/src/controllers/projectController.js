@@ -1,4 +1,4 @@
-import Project from "../models/projectModel.js";
+import Project from "../models/Project.js";
 
 export const createProject = async (req, res) => {
     try {
@@ -46,7 +46,7 @@ export const updateProject = async (req, res) => {
         const updatedProject = await Project.findByIdAndUpdate(
             req.params.id, 
             req.body, 
-            { new: true,
+            { returnDocument: "after",
                 runValidators: true 
             }
             );
