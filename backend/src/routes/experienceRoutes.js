@@ -1,15 +1,15 @@
 import express from "express";
-
+import protect from "../middleware/authMiddleware.js";
 import { createExperience, getExperiences, updateExperience, deleteExperience } from "../controllers/experienceController.js";
 
 const router = express.Router();
 
 router.route("/")
 .get(getExperiences)
-.post(createExperience);
+.post(protect,createExperience);
 
 router.route("/:id")
-.put(updateExperience)
-.delete(deleteExperience);
+.put(protect, updateExperience)
+.delete(protect, deleteExperience);
 
 export default router;

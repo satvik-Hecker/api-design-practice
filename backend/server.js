@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import projectRoutes from "./src/routes/projectRoutes.js";
 import experienceRoutes from "./src/routes/experienceRoutes.js";
 import profileRoutes from "./src/routes/profileRoutes.js";
+import authRoutes from "./src/routes/authRoutes.js";
 
 dotenv.config();
 dns.setServers(["1.1.1.1", "1.0.0.1"]);
@@ -33,6 +34,7 @@ app.get("/", (req, res) => {
 app.use("/api/projects", projectRoutes);
 app.use("/api/experiences", experienceRoutes);
 app.use("/api/profile", profileRoutes);
+app.use("/api/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

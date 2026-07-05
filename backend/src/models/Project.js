@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { trim } from "zod";
+
 
 const projectSchema = new mongoose.Schema(
     {
